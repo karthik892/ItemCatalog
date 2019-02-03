@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="card" style="width:100%">
+    <div class="card-body">
+        <h1 class="card-title">{{item.name}}</h1>
+        {% autoescape false %}
+        <p class="card-text"><b>Description: </b>{{item.description | replace("\n", "<br/>")}}</p>
+        {% endautoescape %}
+        {% if session.email == item.creator_email %}
+            <a class="card-link btn btn-outline-secondary" href="/{{item.category_name}}/{{item.name}}\edit">Modify</a>
+            <a class="card-link btn btn-outline-danger" href="/{{item.category_name}}/{{item.name}}/delete">Delete</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

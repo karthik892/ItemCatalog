@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card" style="width: 100%">
+				<div class="card-body">
+					<h5 class="card-title">Categories</h5>
+					<p class="card-text">
+						{% for category in categories %}
+							<div class="row">
+								<div class="col-sm-12">
+									<a href="{{category.name}}">{{category.name}}</a>
+								</div>
+							</div>
+						{% endfor %}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-8">
+			<div class="card" style="width: 100%">
+				<div class="card-body">
+					{% if session.username %}
+						<a class="card-link btn btn-outline-secondary" href="/{{cat_name}}/add">Add Item</a>
+					{% endif %}
+					<h5 class="card-title">{{cat_name}}</h5>
+					<p class="card-text">
+						{% for item in items %}
+							<div class="row">
+								<div class="col-sm-12">
+									<a href="/{{item.category_name}}/{{item.name}}">{{item.name}}</a>
+									{% if session.email == item.creator_email %}    
+										- <a class="" href="/{{item.category_name}}/{{item.name}}\edit">Edit</a>
+										- <a class="" href="/{{item.category_name}}/{{item.name}}\delete">Delete</a>
+									{% endif %}
+								</div>
+							</div>
+						{% endfor %}
+					</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+{% endblock content %}

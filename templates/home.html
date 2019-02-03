@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row">
+
+	<div class="col-md-4">
+		<div class="card" style="width: 100%;">
+			<div class="card-body">
+				<h5 class="card-title">Categories</h5>
+				<p class="card-text">
+					{% for category in categories %}
+						<div class="row">
+							<div class="col-sm-12">
+								<a href="{{category.name}}">{{category.name}}</a>
+							</div>
+						</div>
+					{% endfor %}
+					
+				</p>
+			</div>
+		</div>
+		
+	</div>
+	<div class="col-md-8">
+		<div class="card" style="width: 100%;">
+			<div class="card-body">
+				<h5 class="card-title">Latest Items</h5>
+				<p class="card-text">
+					{% for top_item in top_items %}
+						<div class="row">
+							<div class="col-sm-12">
+								<a href="{{top_item.category_name}}/{{top_item.name}}">{{top_item.name}} </a> ({{top_item.category_name}})
+							</div>
+						</div>
+					{% endfor %}
+				</p>
+			</div>
+		</div>
+		
+	</div>
+</div>
+{% endblock content %}
