@@ -38,5 +38,5 @@ class User(Base):
     email = Column(String(255), primary_key=True)
     name = Column(String(255))
 
-engine = create_engine('sqlite:///ItemCatalog.db')
+engine = create_engine('postgresql://scott:tiger@localhost:5432/mydatabase')
 Base.metadata.create_all(engine)
