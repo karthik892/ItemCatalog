@@ -323,7 +323,13 @@ def getItemJSON(item_name):
     print(item)
     return jsonify(Item=item.serialize)
 
+
+def wsgi_startup():
+    app.secret_key = 'fdhjsdbhjfhdkcxxd'
+    app.run(host="0.0.0.0", debug=True)
+
+
 if __name__ == '__main__':
-    app.secret_key = 'super_secret_key'
+    app.secret_key = 'fdhjsdbhjfhdkcxxd'
     app.run(host="0.0.0.0", debug=True)
 #    app.run()

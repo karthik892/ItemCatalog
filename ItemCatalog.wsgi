@@ -1,0 +1,1 @@
+from FlaskApp import wsgi_startup as application
