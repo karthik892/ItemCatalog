@@ -18,6 +18,26 @@ Python 3
 WSGI
 postgresql
 
+## Configuration Summary
+The following configurations have been performed on the server:
+
+* UFW has been configured to only allow connections on ports 2200 (SSH), 80 (HTTP), 123 (NTP)
+* A new user 'grader' has been created with key-based SSH authentication
+* 'grader' has been added to the sudoers list
+* The postgres user "catalog" has been created with limited permissions for use in the ItemCatalog appication.
+
+
+## Usefull resources
+The following resources were helpfull in completing this project:
+
+* Amazon Lightsail - https://signin.aws.amazon.com
+* mod-wsgi Installation and Configuration - http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/
+* WSGIDaemonProcess documentation - https://modwsgi.readthedocs.io/en/develop/configuration-directives/WSGIDaemonProcess.html
+* Creating user, database and adding access on PostgreSQL - https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+* Listing databases and tables in Postgresql - https://dba.stackexchange.com/questions/1285/how-do-i-list-all-databases-and-tables-using-psql
+* Connecting Postgresql with SQLAlchemy - https://docs.sqlalchemy.org/en/latest/core/engines.html
+* vi text editor usage - https://kb.iu.edu/d/adxz
+
 
 ## API endpoints
 
